@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "covid-db", "covid-db\covid-db.sqlproj", "{F6D6FD34-696D-40B8-B970-9F52062C4503}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6D6FD34-696D-40B8-B970-9F52062C4503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6D6FD34-696D-40B8-B970-9F52062C4503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6D6FD34-696D-40B8-B970-9F52062C4503}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F6D6FD34-696D-40B8-B970-9F52062C4503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6D6FD34-696D-40B8-B970-9F52062C4503}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6D6FD34-696D-40B8-B970-9F52062C4503}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {240CD796-EE0D-469D-9F6E-F823FCC4717D}
+	EndGlobalSection
+EndGlobal

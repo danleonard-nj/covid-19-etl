@@ -1,0 +1,4 @@
+{
+	"covidFileDirectory" :	"./covid-19-data/csse_covid_19_data/csse_covid_19_daily_reports",
+	"covidRepositoryDirectory"	:	"./covid-19-data"
+}

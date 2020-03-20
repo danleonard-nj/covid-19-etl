@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>covid_db</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{f6d6fd34-696d-40b8-b970-9f52062c4503}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureDatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>covid_db</RootNamespace>
+    <AssemblyName>covid_db</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="staging\" />
+    <Folder Include="staging\Tables\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="etl" />
+    <Folder Include="etl\Stored Procedures" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\DimCountryRegion.sql" />
+    <Build Include="dbo\Tables\DimProvinceState.sql" />
+    <Build Include="dbo\Tables\FactCovidDaily.sql" />
+    <Build Include="dbo\Tables\StageCovidDailyReports.sql" />
+    <Build Include="Security\staging.sql" />
+    <Build Include="staging\Tables\StageDimCountryRegion.sql" />
+    <Build Include="staging\Tables\StageDimProvinceState.sql" />
+    <Build Include="staging\Tables\StageFactCovidDaily.sql" />
+    <Build Include="dbo\Stored Procedures\InsertStageFactCovidDaily.sql" />
+    <Build Include="dbo\Stored Procedures\InsertStageDimCountryRegion.sql" />
+    <Build Include="dbo\Stored Procedures\InsertStageDimProvinceState.sql" />
+    <Build Include="dbo\Stored Procedures\UpdateStageFactCovidDaily.sql" />
+    <Build Include="dbo\Stored Procedures\InsertFactCovidDaily.sql" />
+    <Build Include="dbo\Stored Procedures\CreateFactCovidDaily.sql" />
+    <Build Include="dbo\Stored Procedures\CreateDimCountryRegion.sql" />
+    <Build Include="dbo\Stored Procedures\CreateProvinceState.sql" />
+    <Build Include="dbo\Stored Procedures\InsertDimCountryRegion.sql" />
+    <Build Include="dbo\Stored Procedures\InsertDimProvinceState.sql" />
+    <Build Include="dbo\Stored Procedures\CreateStageFactCovidDaily.sql" />
+    <Build Include="dbo\Stored Procedures\CreateStageDimCountryRegion.sql" />
+    <Build Include="dbo\Stored Procedures\CreateStageDimProvinceState.sql" />
+    <Build Include="Security\etl.sql" />
+    <Build Include="etl\Stored Procedures\DropStagingTables.sql" />
+    <Build Include="etl\Stored Procedures\CreateStagingTables.sql" />
+    <Build Include="etl\Stored Procedures\PopulateStagingTables.sql" />
+    <Build Include="etl\Stored Procedures\DropProductionTables.sql" />
+    <Build Include="etl\Stored Procedures\CreateProductionTables.sql" />
+    <Build Include="etl\Stored Procedures\PopulateProductionTables.sql" />
+    <Build Include="etl\Stored Procedures\InvokeEtlJob.sql" />
+  </ItemGroup>
+</Project>
